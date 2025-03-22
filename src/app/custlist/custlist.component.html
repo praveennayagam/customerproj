@@ -1,0 +1,28 @@
+<p>custlist works!</p>
+
+<table class="table table-hover table-bordered table-striped table-sm text-center shadow-lg rounded">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Delete</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="clickable" *ngFor="let cust of customer">
+          <td>
+        
+            <a class="nav-link active" aria-current="page" routerLink="/updatecust/{{cust.id}}"
+            routerLinkActive="active"
+            aria-current="page">
+            {{cust.id}}
+            </a>
+          </td>
+          <td>{{cust.name}}</td>
+          <td>
+            <button (click)="onDelete(cust)">X</button>
+          </td>
+        </tr>
+      </tbody>
+  </table>
